@@ -1,31 +1,45 @@
-# Change these first
-owner: upptime # Your GitHub organization or username, where this repository lives
-repo: upptime # The name of this repository
+owner: makeev
+repo: alphai-status
 
 sites:
-  - name: Google
-    url: https://www.google.com
-  - name: Wikipedia
-    url: https://en.wikipedia.org
-  - name: Hacker News
-    url: https://news.ycombinator.com
-  - name: Test Broken Site
-    url: https://thissitedoesnotexist.koj.co
+  # 1) Website — CloudFront edge chain (real-user path). Shallow by design: its
+  #    job is to prove the edge routes; deep health is monitor #2. The ONLY probe
+  #    that rides CloudFront, so the WAF caveat applies here alone.
+  - name: Website
+    url: https://alphai.io/api/health_check
+    expectedStatusCodes: [200]
+    headers:
+      - "User-Agent: AlphaAI-Upptime/1.0 (+https://status.alphai.io)"
+  # 2) REST API — DEEP health (source of truth). SELECT 1 + Redis PING; direct-ALB
+  #    (thin rate-WAF, runners pass) → no WAF risk. 503 = a real outage.
+  - name: REST API
+    url: https://api.alphai.io/api/health/ready
+    expectedStatusCodes: [200]
+    headers:
+      - "User-Agent: AlphaAI-Upptime/1.0 (+https://status.alphai.io)"
+  # 3) Public API gate — proves the key-only host + auth layer are up. Polarity:
+  #    401 = up (auth answers before the DB; data-plane is monitor #2's job).
+  - name: Public API gate
+    url: https://api.alphai.io/api/news/
+    expectedStatusCodes: [401]
+    headers:
+      - "User-Agent: AlphaAI-Upptime/1.0 (+https://status.alphai.io)"
+  - name: MCP server
+    url: https://mcp.alphai.io/health
+    expectedStatusCodes: [200]
+    headers:
+      - "User-Agent: AlphaAI-Upptime/1.0 (+https://status.alphai.io)"
 
 status-website:
-  # Add your custom domain name, or remove the `cname` line if you don't have a domain
-  # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
-  cname: demo.upptime.js.org
-  # baseUrl: /your-repo-name
-  logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
-  name: Upptime
-  introTitle: "**Upptime** is the open-source uptime monitor and status page, powered entirely by GitHub."
-  introMessage: This is a sample status page which uses **real-time** data from our [GitHub repository](https://github.com/upptime/upptime). No server required — just GitHub Actions, Issues, and Pages. [**Get your own for free**](https://github.com/upptime/upptime)
+  cname: status.alphai.io
+  name: AlphaAI Status
+  introTitle: "AlphaAI status"
+  introMessage: "Live availability of the AlphaAI website, public REST API, and MCP server."
   navbar:
-    - title: Status
-      href: /
-    - title: GitHub
-      href: https://github.com/$OWNER/$REPO
+    - title: Home
+      href: https://alphai.io
+    - title: Changelog
+      href: https://alphai.io/changelog
 
-# Upptime also supports notifications, assigning issues, and more
-# See https://upptime.js.org/docs/configuration
+assignees:
+  - makeev
