@@ -2,6 +2,14 @@ owner: makeev
 repo: alphai-status
 
 sites:
+  # Probe budget (all four monitors). Defaults are 30 s connect / 60 s request /
+  # 3 retries, and uptime-monitor retries entirely on the SAME runner — so a
+  # runner-local network fault turns into 291 s per site and a 15-minute run
+  # that supersedes the next three scheduled runs (2026-07-27 false positive,
+  # see issues/2026-07-27-upptime-false-positive-runner-blackhole.md in the
+  # alphai_io repo). Healthy connect+response is 0.4-0.6 s, so 10 s is ~20x
+  # headroom. Worst case per black-holed site: 291 s -> 75 s, keeping a triple
+  # failure inside the 5-minute cadence.
   # 1) Website — CloudFront edge chain (real-user path). Shallow by design: its
   #    job is to prove the edge routes; deep health is monitor #2. The ONLY probe
   #    that rides CloudFront, so the WAF caveat applies here alone.
@@ -10,6 +18,9 @@ sites:
     expectedStatusCodes: [200]
     headers:
       - "User-Agent: AlphaAI-Upptime/1.0 (+https://status.alphai.io)"
+    connectTimeout: 10
+    requestTimeout: 20
+    maxRetries: 2
   # 2) REST API — DEEP health (source of truth). SELECT 1 + Redis PING; direct-ALB
   #    (thin rate-WAF, runners pass) → no WAF risk. 503 = a real outage.
   - name: REST API
@@ -17,6 +28,9 @@ sites:
     expectedStatusCodes: [200]
     headers:
       - "User-Agent: AlphaAI-Upptime/1.0 (+https://status.alphai.io)"
+    connectTimeout: 10
+    requestTimeout: 20
+    maxRetries: 2
   # 3) Public API gate — proves the key-only host + auth layer are up. Polarity:
   #    401 = up (auth answers before the DB; data-plane is monitor #2's job).
   - name: Public API gate
@@ -24,11 +38,17 @@ sites:
     expectedStatusCodes: [401]
     headers:
       - "User-Agent: AlphaAI-Upptime/1.0 (+https://status.alphai.io)"
+    connectTimeout: 10
+    requestTimeout: 20
+    maxRetries: 2
   - name: MCP server
     url: https://mcp.alphai.io/health
     expectedStatusCodes: [200]
     headers:
       - "User-Agent: AlphaAI-Upptime/1.0 (+https://status.alphai.io)"
+    connectTimeout: 10
+    requestTimeout: 20
+    maxRetries: 2
 
 status-website:
   cname: status.alphai.io
