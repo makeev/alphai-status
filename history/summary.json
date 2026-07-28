@@ -10,11 +10,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 511,
-    "timeDay": 597,
-    "timeWeek": 480,
-    "timeMonth": 511,
-    "timeYear": 511,
+    "time": 506,
+    "timeDay": 430,
+    "timeWeek": 490,
+    "timeMonth": 506,
+    "timeYear": 506,
     "dailyMinutesDown": {}
   },
   {
@@ -23,19 +23,17 @@
     "icon": "https://icons.duckduckgo.com/ip3/api.alphai.io.ico",
     "slug": "rest-api",
     "status": "up",
-    "uptime": "99.95%",
-    "uptimeDay": "99.30%",
-    "uptimeWeek": "99.90%",
-    "uptimeMonth": "99.95%",
-    "uptimeYear": "99.95%",
-    "time": 503,
-    "timeDay": 559,
-    "timeWeek": 500,
-    "timeMonth": 503,
-    "timeYear": 503,
-    "dailyMinutesDown": {
-      "2026-07-27": 10
-    }
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
+    "time": 507,
+    "timeDay": 545,
+    "timeWeek": 511,
+    "timeMonth": 507,
+    "timeYear": 507,
+    "dailyMinutesDown": {}
   },
   {
     "name": "Public API gate",
@@ -43,19 +41,17 @@
     "icon": "https://icons.duckduckgo.com/ip3/api.alphai.io.ico",
     "slug": "public-api-gate",
     "status": "up",
-    "uptime": "99.97%",
-    "uptimeDay": "99.63%",
-    "uptimeWeek": "99.95%",
-    "uptimeMonth": "99.97%",
-    "uptimeYear": "99.97%",
-    "time": 463,
-    "timeDay": 522,
-    "timeWeek": 448,
-    "timeMonth": 463,
-    "timeYear": 463,
-    "dailyMinutesDown": {
-      "2026-07-27": 5
-    }
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
+    "time": 470,
+    "timeDay": 516,
+    "timeWeek": 470,
+    "timeMonth": 470,
+    "timeYear": 470,
+    "dailyMinutesDown": {}
   },
   {
     "name": "MCP server",
@@ -64,17 +60,15 @@
     "slug": "mcp-server",
     "status": "up",
     "uptime": "100.00%",
-    "uptimeDay": "99.97%",
+    "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 470,
-    "timeDay": 463,
-    "timeWeek": 470,
-    "timeMonth": 470,
-    "timeYear": 470,
-    "dailyMinutesDown": {
-      "2026-07-27": 0
-    }
+    "time": 467,
+    "timeDay": 387,
+    "timeWeek": 478,
+    "timeMonth": 467,
+    "timeYear": 467,
+    "dailyMinutesDown": {}
   }
 ]
