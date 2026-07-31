@@ -22,19 +22,19 @@
     "url": "https://api.alphai.io/api/health/ready",
     "icon": "https://icons.duckduckgo.com/ip3/api.alphai.io.ico",
     "slug": "rest-api",
-    "status": "down",
+    "status": "up",
     "uptime": "99.99%",
-    "uptimeDay": "99.82%",
-    "uptimeWeek": "99.97%",
+    "uptimeDay": "99.73%",
+    "uptimeWeek": "99.96%",
     "uptimeMonth": "99.99%",
     "uptimeYear": "99.99%",
-    "time": 500,
-    "timeDay": 435,
-    "timeWeek": 513,
-    "timeMonth": 500,
-    "timeYear": 500,
+    "time": 503,
+    "timeDay": 499,
+    "timeWeek": 518,
+    "timeMonth": 503,
+    "timeYear": 503,
     "dailyMinutesDown": {
-      "2026-07-31": 3
+      "2026-07-31": 4
     }
   },
   {
@@ -42,19 +42,19 @@
     "url": "https://api.alphai.io/api/news/",
     "icon": "https://icons.duckduckgo.com/ip3/api.alphai.io.ico",
     "slug": "public-api-gate",
-    "status": "down",
+    "status": "up",
     "uptime": "99.99%",
-    "uptimeDay": "99.91%",
-    "uptimeWeek": "99.99%",
+    "uptimeDay": "99.82%",
+    "uptimeWeek": "99.97%",
     "uptimeMonth": "99.99%",
     "uptimeYear": "99.99%",
-    "time": 477,
-    "timeDay": 403,
-    "timeWeek": 502,
-    "timeMonth": 477,
-    "timeYear": 477,
+    "time": 475,
+    "timeDay": 425,
+    "timeWeek": 496,
+    "timeMonth": 475,
+    "timeYear": 475,
     "dailyMinutesDown": {
-      "2026-07-31": 1
+      "2026-07-31": 3
     }
   },
   {
@@ -62,17 +62,19 @@
     "url": "https://mcp.alphai.io/health",
     "icon": "https://icons.duckduckgo.com/ip3/mcp.alphai.io.ico",
     "slug": "mcp-server",
-    "status": "down",
-    "uptime": "100.00%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
-    "time": 495,
-    "timeDay": 703,
-    "timeWeek": 519,
-    "timeMonth": 495,
-    "timeYear": 495,
-    "dailyMinutesDown": {}
+    "status": "up",
+    "uptime": "99.99%",
+    "uptimeDay": "99.91%",
+    "uptimeWeek": "99.99%",
+    "uptimeMonth": "99.99%",
+    "uptimeYear": "99.99%",
+    "time": 492,
+    "timeDay": 567,
+    "timeWeek": 510,
+    "timeMonth": 492,
+    "timeYear": 492,
+    "dailyMinutesDown": {
+      "2026-07-31": 1
+    }
   }
 ]
