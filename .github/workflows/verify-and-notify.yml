@@ -1,0 +1,74 @@
+#
+# Custom workflow — NOT part of the Upptime template. The weekly
+# `update-template` job only rewrites the files it generates, so this one and
+# .github/scripts/verify-and-notify.sh survive template updates.
+#
+# WHY THIS EXISTS
+# Upptime's own Telegram notifier fires the moment ONE GitHub runner fails to
+# reach a URL. Four times between 2026-07-27 and 2026-08-03 that runner's
+# egress to the ALB's IPs was black-holed while the service kept serving
+# 80-115 req/min (ALB RequestCount flat, zero connection errors, and not one
+# probe in the access log). Every time, the CloudFront-fronted `Website` probe
+# passed from the same runner seconds earlier, and the next scheduled run on a
+# fresh runner was green.
+#
+# Retries do not fix this: Upptime's ladder (maxRetries + two outer retries)
+# runs entirely on the same runner over the same broken path, so all six
+# attempts share one wrong opinion. A longer timeout is worse — on 2026-07-27
+# the 30s/60s defaults stretched the run to 15 minutes and GitHub cancelled the
+# three queued runs behind it, so the monitor went blind exactly while it was
+# claiming an outage.
+#
+# So: Upptime still opens/closes issues and paints the status page, but the
+# Telegram message is sent from HERE, only after a second probe from a FRESH
+# runner reproduces the failure. Against the four known episodes this gate
+# suppresses 4/4.
+#
+# Full story: issues/2026-07-27-upptime-false-positive-runner-blackhole.md in
+# the alphai_io repo.
+#
+# FAIL-OPEN: anything this workflow cannot verify (site missing from
+# .upptimerc.yml, a degraded-performance issue, tooling error) is alerted
+# unverified. Silence is only ever the result of a successful re-probe.
+#
+# Requires: secrets NOTIFICATION_TELEGRAM_BOT_KEY, NOTIFICATION_TELEGRAM_CHAT_ID
+# and GH_PAT. The `NOTIFICATION_TELEGRAM` secret must stay DELETED — that is
+# what disables Upptime's own (ungated) Telegram channel, see notifme.ts:394.
+# Do not set it to "false": the string is truthy in JS.
+#
+name: Verify before alerting
+
+on:
+  issues:
+    types: [opened, closed]
+
+permissions:
+  issues: write
+
+concurrency:
+  group: verify-alert-${{ github.event.issue.number }}
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    name: Second opinion
+    if: contains(github.event.issue.labels.*.name, 'status')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Verify and notify
+        env:
+          EVENT_ACTION: ${{ github.event.action }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+          ISSUE_CREATED: ${{ github.event.issue.created_at }}
+          ISSUE_CLOSED: ${{ github.event.issue.closed_at }}
+          HAS_ALERTED: ${{ contains(github.event.issue.labels.*.name, 'alerted') }}
+          TELEGRAM_BOT_KEY: ${{ secrets.NOTIFICATION_TELEGRAM_BOT_KEY }}
+          TELEGRAM_CHAT_ID: ${{ secrets.NOTIFICATION_TELEGRAM_CHAT_ID }}
+          GH_TOKEN: ${{ secrets.GH_PAT || github.token }}
+        run: bash .github/scripts/verify-and-notify.sh
