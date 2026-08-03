@@ -28,16 +28,24 @@ send_telegram() {
     log "!! Telegram secrets missing — cannot notify"
     return 1
   fi
-  local IFS=,
+  local IFS=, resp
   for chat in $TELEGRAM_CHAT_ID; do
     chat="${chat// /}"
     [[ -z "$chat" ]] && continue
-    curl -sS -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_KEY}/sendMessage" \
+    # curl exits 0 on an HTTP 400 from Telegram, so check the body too — a
+    # notifier that fails quietly is the one failure mode this whole workflow
+    # exists to avoid. Log only ok/description: the raw response echoes the
+    # chat id and this repo's Action logs are public.
+    resp="$(curl -sS -m 20 -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_KEY}/sendMessage" \
       -d chat_id="$chat" \
       -d parse_mode=HTML \
       -d disable_web_page_preview=true \
-      --data-urlencode text="$text" >/dev/null ||
-      log "!! Telegram send failed for chat $chat"
+      --data-urlencode text="$text" 2>/dev/null)"
+    case "$resp" in
+    *'"ok":true'*) log "Telegram: delivered" ;;
+    "") log "!! Telegram: no response (network error)" ;;
+    *) log "!! Telegram rejected the message: $(printf '%s' "$resp" | grep -o '"description":"[^"]*"' | head -1)" ;;
+    esac
   done
 }
 
