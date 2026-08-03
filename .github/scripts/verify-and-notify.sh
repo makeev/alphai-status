@@ -42,7 +42,11 @@ send_telegram() {
 }
 
 add_label() {
-  gh issue edit "$ISSUE_NUMBER" --add-label "$1" >/dev/null 2>&1 ||
+  # Raw API, not `gh issue edit --add-label`: the CLI refuses labels that do not
+  # exist in the repo yet, the API creates them. `alerted` is load-bearing — the
+  # recovery message keys on it.
+  gh api "repos/${GITHUB_REPOSITORY:-makeev/alphai-status}/issues/${ISSUE_NUMBER}/labels" \
+    -X POST -f "labels[]=$1" >/dev/null 2>&1 ||
     log "!! could not add label $1"
 }
 
