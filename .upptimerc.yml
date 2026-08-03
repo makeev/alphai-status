@@ -1,6 +1,13 @@
 owner: makeev
 repo: alphai-status
 
+# Telegram alerts do NOT come from Upptime itself — the `NOTIFICATION_TELEGRAM`
+# secret is deliberately absent, which disables its ungated notifier. They are
+# sent by .github/workflows/verify-and-notify.yml, which re-probes from a fresh
+# runner before alerting (four false positives 2026-07-27 → 08-03, all of them
+# one runner's egress, never the service). Read that file before touching the
+# probe settings below.
+
 sites:
   # Probe budget (all four monitors). Defaults are 30 s connect / 60 s request /
   # 3 retries, and uptime-monitor retries entirely on the SAME runner — so a
