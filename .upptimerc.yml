@@ -59,9 +59,9 @@ sites:
 
 status-website:
   cname: status.alphai.io
-  name: AlphaAI Status
-  introTitle: "AlphaAI status"
-  introMessage: "Live availability of the AlphaAI website, public REST API, and MCP server."
+  name: AlphAI Status
+  introTitle: "AlphAI status"
+  introMessage: "Live availability of the AlphAI website, public REST API, and MCP server."
   navbar:
     - title: Home
       href: https://alphai.io
