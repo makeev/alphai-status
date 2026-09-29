@@ -58,19 +58,20 @@
     "url": "https://mcp.alphai.io/health",
     "icon": "https://icons.duckduckgo.com/ip3/mcp.alphai.io.ico",
     "slug": "mcp-server",
-    "status": "up",
+    "status": "down",
     "uptime": "99.99%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.99%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "99.99%",
     "uptimeYear": "99.99%",
     "time": 437,
-    "timeDay": 419,
-    "timeWeek": 432,
-    "timeMonth": 430,
+    "timeDay": 440,
+    "timeWeek": 436,
+    "timeMonth": 431,
     "timeYear": 437,
     "dailyMinutesDown": {
-      "2026-09-11": 6
+      "2026-09-11": 6,
+      "2026-09-29": 0
     }
   }
 ]
