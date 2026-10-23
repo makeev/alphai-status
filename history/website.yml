@@ -1,7 +1,7 @@
 url: https://alphai.io/api/health_check
-status: down
-code: 502
-responseTime: 2195
-lastUpdated: 2026-10-23T10:01:44.500Z
+status: up
+code: 200
+responseTime: 397
+lastUpdated: 2026-10-23T10:05:43.393Z
 startTime: 2026-07-13T06:21:28.566Z
 generator: Upptime <https://github.com/upptime/upptime>
