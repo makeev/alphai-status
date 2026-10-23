@@ -4,18 +4,20 @@
     "url": "https://alphai.io/api/health_check",
     "icon": "https://icons.duckduckgo.com/ip3/alphai.io.ico",
     "slug": "website",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.98%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 487,
-    "timeDay": 570,
-    "timeWeek": 483,
-    "timeMonth": 450,
-    "timeYear": 487,
-    "dailyMinutesDown": {}
+    "time": 488,
+    "timeDay": 607,
+    "timeWeek": 503,
+    "timeMonth": 456,
+    "timeYear": 488,
+    "dailyMinutesDown": {
+      "2026-10-23": 0
+    }
   },
   {
     "name": "REST API",
