@@ -6,8 +6,8 @@
     "slug": "website",
     "status": "down",
     "uptime": "99.99%",
-    "uptimeDay": "99.13%",
-    "uptimeWeek": "99.88%",
+    "uptimeDay": "98.98%",
+    "uptimeWeek": "99.85%",
     "uptimeMonth": "99.97%",
     "uptimeYear": "99.99%",
     "time": 503,
@@ -16,7 +16,7 @@
     "timeMonth": 508,
     "timeYear": 503,
     "dailyMinutesDown": {
-      "2026-10-23": 13
+      "2026-10-23": 15
     }
   },
   {
@@ -26,9 +26,9 @@
     "slug": "rest-api",
     "status": "down",
     "uptime": "99.97%",
-    "uptimeDay": "97.18%",
-    "uptimeWeek": "99.60%",
-    "uptimeMonth": "99.91%",
+    "uptimeDay": "97.03%",
+    "uptimeWeek": "99.58%",
+    "uptimeMonth": "99.90%",
     "uptimeYear": "99.97%",
     "time": 458,
     "timeDay": 448,
@@ -36,7 +36,7 @@
     "timeMonth": 447,
     "timeYear": 458,
     "dailyMinutesDown": {
-      "2026-10-23": 41
+      "2026-10-23": 43
     }
   },
   {
@@ -46,8 +46,8 @@
     "slug": "public-api-gate",
     "status": "down",
     "uptime": "100.00%",
-    "uptimeDay": "99.83%",
-    "uptimeWeek": "99.98%",
+    "uptimeDay": "99.68%",
+    "uptimeWeek": "99.95%",
     "uptimeMonth": "99.99%",
     "uptimeYear": "100.00%",
     "time": 583,
@@ -56,7 +56,7 @@
     "timeMonth": 877,
     "timeYear": 583,
     "dailyMinutesDown": {
-      "2026-10-23": 2
+      "2026-10-23": 5
     }
   },
   {
@@ -64,17 +64,17 @@
     "url": "https://mcp.alphai.io/health",
     "icon": "https://icons.duckduckgo.com/ip3/mcp.alphai.io.ico",
     "slug": "mcp-server",
-    "status": "up",
+    "status": "down",
     "uptime": "99.97%",
     "uptimeDay": "97.20%",
     "uptimeWeek": "99.60%",
     "uptimeMonth": "99.90%",
     "uptimeYear": "99.97%",
-    "time": 479,
-    "timeDay": 1900,
-    "timeWeek": 969,
-    "timeMonth": 576,
-    "timeYear": 479,
+    "time": 478,
+    "timeDay": 1535,
+    "timeWeek": 916,
+    "timeMonth": 572,
+    "timeYear": 478,
     "dailyMinutesDown": {
       "2026-09-11": 6,
       "2026-09-29": 5,
