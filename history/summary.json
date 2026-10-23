@@ -4,19 +4,19 @@
     "url": "https://alphai.io/api/health_check",
     "icon": "https://icons.duckduckgo.com/ip3/alphai.io.ico",
     "slug": "website",
-    "status": "up",
+    "status": "down",
     "uptime": "99.99%",
-    "uptimeDay": "99.24%",
-    "uptimeWeek": "99.89%",
+    "uptimeDay": "99.13%",
+    "uptimeWeek": "99.88%",
     "uptimeMonth": "99.97%",
     "uptimeYear": "99.99%",
-    "time": 488,
-    "timeDay": 531,
-    "timeWeek": 497,
-    "timeMonth": 458,
-    "timeYear": 488,
+    "time": 503,
+    "timeDay": 809,
+    "timeWeek": 639,
+    "timeMonth": 508,
+    "timeYear": 503,
     "dailyMinutesDown": {
-      "2026-10-23": 11
+      "2026-10-23": 13
     }
   },
   {
@@ -26,8 +26,8 @@
     "slug": "rest-api",
     "status": "down",
     "uptime": "99.97%",
-    "uptimeDay": "97.32%",
-    "uptimeWeek": "99.62%",
+    "uptimeDay": "97.18%",
+    "uptimeWeek": "99.60%",
     "uptimeMonth": "99.91%",
     "uptimeYear": "99.97%",
     "time": 458,
@@ -36,7 +36,7 @@
     "timeMonth": 447,
     "timeYear": 458,
     "dailyMinutesDown": {
-      "2026-10-23": 39
+      "2026-10-23": 41
     }
   },
   {
@@ -46,9 +46,9 @@
     "slug": "public-api-gate",
     "status": "down",
     "uptime": "100.00%",
-    "uptimeDay": "99.98%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
+    "uptimeDay": "99.83%",
+    "uptimeWeek": "99.98%",
+    "uptimeMonth": "99.99%",
     "uptimeYear": "100.00%",
     "time": 583,
     "timeDay": 4196,
@@ -56,7 +56,7 @@
     "timeMonth": 877,
     "timeYear": 583,
     "dailyMinutesDown": {
-      "2026-10-23": 0
+      "2026-10-23": 2
     }
   },
   {
@@ -64,21 +64,21 @@
     "url": "https://mcp.alphai.io/health",
     "icon": "https://icons.duckduckgo.com/ip3/mcp.alphai.io.ico",
     "slug": "mcp-server",
-    "status": "down",
+    "status": "up",
     "uptime": "99.97%",
-    "uptimeDay": "97.34%",
-    "uptimeWeek": "99.62%",
+    "uptimeDay": "97.20%",
+    "uptimeWeek": "99.60%",
     "uptimeMonth": "99.90%",
     "uptimeYear": "99.97%",
-    "time": 441,
-    "timeDay": 499,
-    "timeWeek": 502,
-    "timeMonth": 450,
-    "timeYear": 441,
+    "time": 479,
+    "timeDay": 1900,
+    "timeWeek": 969,
+    "timeMonth": 576,
+    "timeYear": 479,
     "dailyMinutesDown": {
       "2026-09-11": 6,
       "2026-09-29": 5,
-      "2026-10-23": 38
+      "2026-10-23": 40
     }
   }
 ]
