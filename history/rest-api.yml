@@ -1,7 +1,7 @@
 url: https://api.alphai.io/api/health/ready
-status: down
-code: 504
-responseTime: 5411
-lastUpdated: 2026-11-09T13:38:57.123Z
+status: up
+code: 200
+responseTime: 425
+lastUpdated: 2026-11-09T13:46:26.673Z
 startTime: 2026-07-13T06:21:29.262Z
 generator: Upptime <https://github.com/upptime/upptime>
