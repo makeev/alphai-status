@@ -1,7 +1,7 @@
 url: https://api.alphai.io/api/news/
-status: up
-code: 401
-responseTime: 418
-lastUpdated: 2026-11-09T02:11:40.894Z
+status: down
+code: 504
+responseTime: 5444
+lastUpdated: 2026-11-09T13:39:17.676Z
 startTime: 2026-07-13T06:21:29.849Z
 generator: Upptime <https://github.com/upptime/upptime>
